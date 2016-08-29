@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		3D91613F7EA841E6CBDBA687 /* Pods_FirebaseIM.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 819DEF7170F5FB2900CE60F9 /* Pods_FirebaseIM.framework */; };
 		5535A6281D74DEF1000B5494 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5535A6271D74DEF1000B5494 /* AVFoundation.framework */; };
+		5535A62A1D74EB9E000B5494 /* Street-View.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 5535A6291D74EB9E000B5494 /* Street-View.mp4 */; };
 		55834D8F1D74C5B200E3B14B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55834D8E1D74C5B200E3B14B /* AppDelegate.swift */; };
 		55834D941D74C5B200E3B14B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 55834D921D74C5B200E3B14B /* Main.storyboard */; };
 		55834D961D74C5B200E3B14B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 55834D951D74C5B200E3B14B /* Assets.xcassets */; };
@@ -24,6 +25,7 @@
 /* Begin PBXFileReference section */
 		341A7F69C20B9004B2F79983 /* Pods-FirebaseIM.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FirebaseIM.release.xcconfig"; path = "Pods/Target Support Files/Pods-FirebaseIM/Pods-FirebaseIM.release.xcconfig"; sourceTree = "<group>"; };
 		5535A6271D74DEF1000B5494 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		5535A6291D74EB9E000B5494 /* Street-View.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Street-View.mp4"; path = "Assets.xcassets/Street-View.dataset/Street-View.mp4"; sourceTree = "<group>"; };
 		55834D8B1D74C5B200E3B14B /* FirebaseIM.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FirebaseIM.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		55834D8E1D74C5B200E3B14B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		55834D931D74C5B200E3B14B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -36,7 +38,6 @@
 		55834DA71D74C78400E3B14B /* JSQSystemSoundPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JSQSystemSoundPlayer.framework; path = "Pods/../build/Debug-iphoneos/JSQSystemSoundPlayer/JSQSystemSoundPlayer.framework"; sourceTree = "<group>"; };
 		55834DA91D74C85A00E3B14B /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		55834DAD1D74D33B00E3B14B /* AVKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVKit.framework; path = System/Library/Frameworks/AVKit.framework; sourceTree = SDKROOT; };
-		55834DAF1D74DA5A00E3B14B /* Street-View.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Street-View.mp4"; path = "../Street-View.mp4"; sourceTree = "<group>"; };
 		55834DB01D74DB2400E3B14B /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		819DEF7170F5FB2900CE60F9 /* Pods_FirebaseIM.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FirebaseIM.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		86121CC31CA87DE9248741B9 /* Pods-FirebaseIM.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FirebaseIM.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FirebaseIM/Pods-FirebaseIM.debug.xcconfig"; sourceTree = "<group>"; };
@@ -47,8 +48,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5535A6281D74DEF1000B5494 /* AVFoundation.framework in Frameworks */,
 				55834DAE1D74D33B00E3B14B /* AVKit.framework in Frameworks */,
+				5535A6281D74DEF1000B5494 /* AVFoundation.framework in Frameworks */,
 				55834DA81D74C78400E3B14B /* JSQSystemSoundPlayer.framework in Frameworks */,
 				55834DA61D74C78000E3B14B /* JSQMessagesViewController.framework in Frameworks */,
 				3D91613F7EA841E6CBDBA687 /* Pods_FirebaseIM.framework in Frameworks */,
@@ -92,7 +93,7 @@
 		55834D8D1D74C5B200E3B14B /* FirebaseIM */ = {
 			isa = PBXGroup;
 			children = (
-				55834DAF1D74DA5A00E3B14B /* Street-View.mp4 */,
+				5535A6291D74EB9E000B5494 /* Street-View.mp4 */,
 				55834D8E1D74C5B200E3B14B /* AppDelegate.swift */,
 				55834DA31D74C74600E3B14B /* MessagesViewController.swift */,
 				55834DB01D74DB2400E3B14B /* LoginViewController.swift */,
@@ -179,6 +180,7 @@
 				55834D991D74C5B200E3B14B /* LaunchScreen.storyboard in Resources */,
 				55834DAA1D74C85A00E3B14B /* GoogleService-Info.plist in Resources */,
 				55834D961D74C5B200E3B14B /* Assets.xcassets in Resources */,
+				5535A62A1D74EB9E000B5494 /* Street-View.mp4 in Resources */,
 				55834D941D74C5B200E3B14B /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
