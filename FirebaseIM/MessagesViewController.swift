@@ -62,7 +62,7 @@ class MessagesViewController:  JSQMessagesViewController {
     
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
-        collectionView.collectionViewLayout.springinessEnabled = true
+        collectionView.collectionViewLayout.springinessEnabled = false
         observeTyping()
     }
     
@@ -91,7 +91,7 @@ class MessagesViewController:  JSQMessagesViewController {
                 self.addMessage(id, text: text)
                 self.finishReceivingMessage()
             }
-            
+            JSQSystemSoundPlayer.jsq_playMessageReceivedAlert()
             
         }
         
