@@ -82,12 +82,12 @@
 			isa = PBXGroup;
 			children = (
 				55834D8E1D74C5B200E3B14B /* AppDelegate.swift */,
+				55834DA31D74C74600E3B14B /* MessagesViewController.swift */,
 				55834D921D74C5B200E3B14B /* Main.storyboard */,
 				55834D951D74C5B200E3B14B /* Assets.xcassets */,
 				55834D971D74C5B200E3B14B /* LaunchScreen.storyboard */,
 				55834D9A1D74C5B200E3B14B /* Info.plist */,
 				55834DA91D74C85A00E3B14B /* GoogleService-Info.plist */,
-				55834DA31D74C74600E3B14B /* MessagesViewController.swift */,
 			);
 			path = FirebaseIM;
 			sourceTree = "<group>";
