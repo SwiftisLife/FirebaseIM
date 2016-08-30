@@ -44,16 +44,13 @@ class MessagesViewController: JSQMessagesViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
-        
         self.senderId = UIDevice.currentDevice().identifierForVendor?.UUIDString
         self.senderDisplayName = UIDevice.currentDevice().identifierForVendor?.UUIDString
+        self.inputToolbar.contentView.leftBarButtonItem = nil
         
         collectionView.collectionViewLayout.outgoingAvatarViewSize = CGSizeZero;
         collectionView.collectionViewLayout.incomingAvatarViewSize = CGSizeZero;
-        
-        self.inputToolbar.contentView.leftBarButtonItem = nil
-        
+      
         messageRef = FIRDatabase.database().reference()
         observeMessages()
         setupBubbles()

@@ -24,7 +24,7 @@
                                     <constraint firstAttribute="width" constant="208" id="maj-0Z-oaE"/>
                                     <constraint firstAttribute="height" constant="54" id="w0x-wc-MDe"/>
                                 </constraints>
-                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" type="system" weight="light" pointSize="15"/>
                                 <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="emailAddress" keyboardAppearance="alert"/>
                             </textField>
@@ -33,7 +33,7 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="54" id="hg2-gi-V4w"/>
                                 </constraints>
-                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" type="system" weight="light" pointSize="15"/>
                                 <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardAppearance="alert" secureTextEntry="YES"/>
                             </textField>
@@ -133,16 +133,16 @@
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="E-mail" textAlignment="center" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="Qaa-1X-woV">
                                 <rect key="frame" x="108" y="105" width="158" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" keyboardType="emailAddress" keyboardAppearance="alert"/>
                             </textField>
                         </subviews>
-                        <color key="backgroundColor" red="0.40000000600000002" green="0.40000000600000002" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="1" colorSpace="calibratedRGB"/>
                         <gestureRecognizers/>
                         <constraints>
                             <constraint firstItem="Qaa-1X-woV" firstAttribute="top" secondItem="FfX-oF-gap" secondAttribute="bottom" constant="85" id="Ezc-Eb-Ujs"/>
                             <constraint firstItem="ekt-bR-PER" firstAttribute="top" secondItem="Qaa-1X-woV" secondAttribute="bottom" constant="39" id="GdH-KD-Cn3"/>
                             <constraint firstItem="Qaa-1X-woV" firstAttribute="centerX" secondItem="ekt-bR-PER" secondAttribute="centerX" id="gih-R2-fR8"/>
-                            <constraint firstItem="Qaa-1X-woV" firstAttribute="leading" secondItem="xbk-dC-qwQ" secondAttribute="leadingMargin" constant="92" id="k8Y-dR-eGZ"/>
+                            <constraint firstItem="Qaa-1X-woV" firstAttribute="leading" secondItem="xbk-dC-qwQ" secondAttribute="leadingMargin" constant="88" id="k8Y-dR-eGZ"/>
                             <constraint firstItem="Qaa-1X-woV" firstAttribute="centerX" secondItem="xbk-dC-qwQ" secondAttribute="centerX" id="yVG-Cv-GQK"/>
                         </constraints>
                         <connections>
@@ -184,7 +184,7 @@
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password" textAlignment="center" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="l7L-gX-oLS">
                                 <rect key="frame" x="100" y="194" width="175" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pz3-Rc-jO9">
                                 <rect key="frame" x="112" y="282" width="150" height="30"/>
@@ -238,6 +238,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <gestureRecognizers/>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
@@ -254,6 +255,6 @@
         <image name="Reset" width="132" height="54"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="y62-Gs-sD9"/>
+        <segue reference="hu1-TP-5lz"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -10,7 +10,6 @@ import UIKit
 import Firebase
 import AVFoundation
 
-
 class LoginViewController: UIViewController {
     
     @IBOutlet weak var textFieldLoginEmail: UITextField!
@@ -32,7 +31,6 @@ class LoginViewController: UIViewController {
         NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(LoginViewController.playerItemDidReachEnd), name: AVPlayerItemDidPlayToEndTimeNotification, object: player!.currentItem)
         player!.seekToTime(kCMTimeZero)
         player!.play()
-        
         
         // Set vertical effect
         let verticalMotionEffect = UIInterpolatingMotionEffect(keyPath: "center.y", type: .TiltAlongVerticalAxis)
@@ -93,7 +91,6 @@ class LoginViewController: UIViewController {
                 
                 alertController.addAction(confirmAction)
                 alertController.addAction(cancelAction)
-                
                 self.presentViewController(alertController, animated: true, completion: nil)
             } else {
                 print("Successful login!")
