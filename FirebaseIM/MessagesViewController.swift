@@ -10,7 +10,7 @@ import UIKit
 import JSQMessagesViewController
 import Firebase 
 
-class MessagesViewController:  JSQMessagesViewController {
+class MessagesViewController: JSQMessagesViewController {
     
     var user: FIRAuth?
     var messages = [JSQMessage]()
@@ -26,7 +26,6 @@ class MessagesViewController:  JSQMessagesViewController {
     
     
     @IBOutlet var MessageView: UIView!
-    
     
     
     var userIsTypingRef: FIRDatabaseReference!

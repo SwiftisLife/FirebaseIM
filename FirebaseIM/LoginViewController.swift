@@ -11,7 +11,6 @@ import Firebase
 import AVFoundation
 
 
-
 class LoginViewController: UIViewController {
     
     @IBOutlet weak var textFieldLoginEmail: UITextField!

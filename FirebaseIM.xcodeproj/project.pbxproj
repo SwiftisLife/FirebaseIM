@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		3D91613F7EA841E6CBDBA687 /* Pods_FirebaseIM.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 819DEF7170F5FB2900CE60F9 /* Pods_FirebaseIM.framework */; };
+		5520DE881D74F8BE0037C26D /* ResetPassword.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5520DE871D74F8BE0037C26D /* ResetPassword.swift */; };
+		5520DE8A1D74FEC50037C26D /* CreateANewAccount.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5520DE891D74FEC50037C26D /* CreateANewAccount.swift */; };
 		5535A6281D74DEF1000B5494 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5535A6271D74DEF1000B5494 /* AVFoundation.framework */; };
 		5535A62A1D74EB9E000B5494 /* Street-View.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 5535A6291D74EB9E000B5494 /* Street-View.mp4 */; };
 		55834D8F1D74C5B200E3B14B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55834D8E1D74C5B200E3B14B /* AppDelegate.swift */; };
@@ -24,6 +26,8 @@
 
 /* Begin PBXFileReference section */
 		341A7F69C20B9004B2F79983 /* Pods-FirebaseIM.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FirebaseIM.release.xcconfig"; path = "Pods/Target Support Files/Pods-FirebaseIM/Pods-FirebaseIM.release.xcconfig"; sourceTree = "<group>"; };
+		5520DE871D74F8BE0037C26D /* ResetPassword.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResetPassword.swift; sourceTree = "<group>"; };
+		5520DE891D74FEC50037C26D /* CreateANewAccount.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateANewAccount.swift; sourceTree = "<group>"; };
 		5535A6271D74DEF1000B5494 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		5535A6291D74EB9E000B5494 /* Street-View.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Street-View.mp4"; path = "Assets.xcassets/Street-View.dataset/Street-View.mp4"; sourceTree = "<group>"; };
 		55834D8B1D74C5B200E3B14B /* FirebaseIM.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FirebaseIM.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -96,7 +100,9 @@
 				5535A6291D74EB9E000B5494 /* Street-View.mp4 */,
 				55834D8E1D74C5B200E3B14B /* AppDelegate.swift */,
 				55834DA31D74C74600E3B14B /* MessagesViewController.swift */,
+				5520DE871D74F8BE0037C26D /* ResetPassword.swift */,
 				55834DB01D74DB2400E3B14B /* LoginViewController.swift */,
+				5520DE891D74FEC50037C26D /* CreateANewAccount.swift */,
 				55834D921D74C5B200E3B14B /* Main.storyboard */,
 				55834D951D74C5B200E3B14B /* Assets.xcassets */,
 				55834D971D74C5B200E3B14B /* LaunchScreen.storyboard */,
@@ -240,6 +246,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5520DE8A1D74FEC50037C26D /* CreateANewAccount.swift in Sources */,
+				5520DE881D74F8BE0037C26D /* ResetPassword.swift in Sources */,
 				55834DB11D74DB2400E3B14B /* LoginViewController.swift in Sources */,
 				55834DA41D74C74600E3B14B /* MessagesViewController.swift in Sources */,
 				55834D8F1D74C5B200E3B14B /* AppDelegate.swift in Sources */,
