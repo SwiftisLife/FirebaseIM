@@ -17,10 +17,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     var alertTitle: String?
 
-
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
-        try! AVAudioSession.sharedInstance().setCategory(AVAudioSessionCategoryAmbient)     
-        
+        // Continue to play users music from iTunes/Apple Music/third party music streaming services
+        try! AVAudioSession.sharedInstance().setCategory(AVAudioSessionCategoryAmbient)
+        // Firebase application configuration
          FIRApp.configure()
         return true
     }
