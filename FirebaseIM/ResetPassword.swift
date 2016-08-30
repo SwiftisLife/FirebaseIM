@@ -11,8 +11,6 @@ import Firebase
 
 class ResetPassword: UIViewController {
     
- 
-    
     @IBOutlet weak var resetPasswordForUser: UITextField!
     
     override func viewDidLoad() {
