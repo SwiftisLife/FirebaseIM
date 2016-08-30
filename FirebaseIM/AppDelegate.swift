@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import AVFoundation.AVAudioSession
 import Firebase
 
 @UIApplicationMain
@@ -18,7 +19,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
-       
+        try! AVAudioSession.sharedInstance().setCategory(AVAudioSessionCategoryAmbient)     
         
          FIRApp.configure()
         return true
