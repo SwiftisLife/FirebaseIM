@@ -10,7 +10,7 @@ import UIKit
 import Firebase
 import AVFoundation
 
-class LoginViewController: UIViewController {
+class LoginViewController: UIViewController, UIApplicationDelegate {
     
     @IBOutlet weak var textFieldLoginEmail: UITextField!
     
@@ -21,6 +21,7 @@ class LoginViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         let token = FIRInstanceID.instanceID().token()!
+        
         UIApplication.sharedApplication().statusBarStyle = .LightContent
         let path = NSBundle.mainBundle().pathForResource("Street-View", ofType: "mp4")
         player = AVPlayer(URL: NSURL(fileURLWithPath: path!))
@@ -29,6 +30,7 @@ class LoginViewController: UIViewController {
         playerLayer.frame = self.view.frame
         playerLayer.videoGravity = AVLayerVideoGravityResizeAspectFill
         self.view.layer.insertSublayer(playerLayer, atIndex: 0)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: Selector("continueVideo:"), name: "continueVideo", object: nil)
         NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(LoginViewController.playerItemDidReachEnd), name: AVPlayerItemDidPlayToEndTimeNotification, object: player!.currentItem)
         player!.seekToTime(kCMTimeZero)
         player!.play()
@@ -56,7 +58,31 @@ class LoginViewController: UIViewController {
     
     func playerItemDidReachEnd() {
         player!.seekToTime(kCMTimeZero)
+        player!.play()
     }
+    func continueVideo(notification: NSNotification) {
+        player!.play()
+    }
+    
+    func applicationWillResignActive(application: UIApplication) {
+        player!.pause()
+    }
+    
+    
+    func applicationDidBecomeActive(application: UIApplication) {
+        player!.play()
+    }
+    
+    
+    func applicationDidEnterBackground(application: UIApplication) {
+        player!.pause()
+    }
+    
+    
+    func applicationWillEnterForeground(application: UIApplication) {
+       player!.play()
+    }
+
     
     //Calls this function when the tap is recognized.
     func dismissKeyboard() {
