@@ -95,7 +95,6 @@ class LoginViewController: UIViewController, UIApplicationDelegate {
         let email = textFieldLoginEmail.text!
         let password = textFieldLoginPassword.text!
         FIRAuth.auth()?.signInWithEmail(email, password: password) { (user, error) in
-            
             if error != nil {
                 print("Can't log in!")
                 // There was an error logging in to this account!
