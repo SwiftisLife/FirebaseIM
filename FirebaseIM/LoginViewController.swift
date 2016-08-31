@@ -20,6 +20,7 @@ class LoginViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        let token = FIRInstanceID.instanceID().token()!
         UIApplication.sharedApplication().statusBarStyle = .LightContent
         let path = NSBundle.mainBundle().pathForResource("Street-View", ofType: "mp4")
         player = AVPlayer(URL: NSURL(fileURLWithPath: path!))
