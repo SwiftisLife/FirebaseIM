@@ -73,6 +73,7 @@ class MessagesViewController: JSQMessagesViewController {
     func addMessage(id: String, text: String) {
         let message = JSQMessage(senderId: id, displayName: "", text: text)
         messages.append(message)
+     
     }
     
     
@@ -88,7 +89,7 @@ class MessagesViewController: JSQMessagesViewController {
                 self.finishReceivingMessage()
             }
             JSQSystemSoundPlayer.jsq_playMessageReceivedAlert()
-            
+        
         }
         
     }
@@ -116,6 +117,7 @@ class MessagesViewController: JSQMessagesViewController {
             self.scrollToBottomAnimated(true)
         }
     }
+    
     override func didPressSendButton(button: UIButton!, withMessageText text: String!, senderId: String!, senderDisplayName: String!, date: NSDate!) {
         
         let itemRef = messageRef.childByAutoId()
@@ -123,12 +125,12 @@ class MessagesViewController: JSQMessagesViewController {
             "text": text,
             "senderId": senderId
         ]
+     
         itemRef.setValue(messageItem)
-        
         JSQSystemSoundPlayer.jsq_playMessageSentSound()
-        
         finishSendingMessage()
         isTyping = false
+    
     }
     
     override func didPressAccessoryButton(sender: UIButton!) {
@@ -143,10 +145,9 @@ class MessagesViewController: JSQMessagesViewController {
     }
     
     override func collectionView(collectionView: JSQMessagesCollectionView!, messageDataForItemAtIndexPath indexPath: NSIndexPath!) -> JSQMessageData! {
-        
+  
         let data = self.messages[indexPath.row]
         return data
-        
     }
     
     override func collectionView(collectionView: JSQMessagesCollectionView!, didDeleteMessageAtIndexPath indexPath: NSIndexPath!) {
@@ -154,7 +155,7 @@ class MessagesViewController: JSQMessagesViewController {
     }
     
     override func collectionView(collectionView: JSQMessagesCollectionView!, messageBubbleImageDataForItemAtIndexPath indexPath: NSIndexPath!) -> JSQMessageBubbleImageDataSource! {
-        
+
         let data = messages[indexPath.row]
         switch(data.senderId) {
         case self.senderId:
@@ -167,9 +168,7 @@ class MessagesViewController: JSQMessagesViewController {
     override func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
         
         let cell = super.collectionView(collectionView, cellForItemAtIndexPath: indexPath) as! JSQMessagesCollectionViewCell
-        
         let message = messages[indexPath.item]
-        
         if message.senderId == senderId {
             cell.textView!.textColor = UIColor.whiteColor()
         } else {

@@ -7,20 +7,22 @@
 //
 
 import UIKit
-import Firebase
+import FirebaseAuth
 import AVFoundation
 
-class LoginViewController: UIViewController, UIApplicationDelegate {
+class LoginViewController: UIViewController {
     
+
     @IBOutlet weak var textFieldLoginEmail: UITextField!
     
     @IBOutlet weak var textFieldLoginPassword: UITextField!
     
+
     var player: AVPlayer?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        let token = FIRInstanceID.instanceID().token()!
+     
         
         UIApplication.sharedApplication().statusBarStyle = .LightContent
         let path = NSBundle.mainBundle().pathForResource("Street-View", ofType: "mp4")
@@ -80,9 +82,9 @@ class LoginViewController: UIViewController, UIApplicationDelegate {
     
     
     func applicationWillEnterForeground(application: UIApplication) {
-       player!.play()
+        player!.play()
     }
-
+    
     
     //Calls this function when the tap is recognized.
     func dismissKeyboard() {
@@ -90,13 +92,11 @@ class LoginViewController: UIViewController, UIApplicationDelegate {
         view.endEditing(true)
     }
     
-    
     @IBAction func loginDidTouch(sender: AnyObject) {
-        let email = textFieldLoginEmail.text!
-        let password = textFieldLoginPassword.text!
-        FIRAuth.auth()?.signInWithEmail(email, password: password) { (user, error) in
+        if let email = textFieldLoginEmail.text, let password = textFieldLoginPassword.text {
+            FIRAuth.auth()?.signInWithEmail(email, password: password, completion: { (user, error) in
             if error != nil {
-                print("Can't log in!")
+   
                 // There was an error logging in to this account!
                 let alertController = UIAlertController(
                     title: "Hey user!",
@@ -120,8 +120,9 @@ class LoginViewController: UIViewController, UIApplicationDelegate {
                 self.presentViewController(alertController, animated: true, completion: nil)
             } else {
                 print("Successful login!")
-                self.performSegueWithIdentifier("LoginToChat", sender: nil)
+                self.performSegueWithIdentifier("SuccessfulAuthentication", sender: nil)
             }
-        }
+        })
     }
+}
 }

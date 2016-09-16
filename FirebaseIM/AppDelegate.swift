@@ -15,6 +15,7 @@ import FirebaseMessaging
 class AppDelegate: UIResponder, UIApplicationDelegate {
     
     var window: UIWindow?
+    var alertTitle: String?
     
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Continue to play users music from iTunes/Apple Music/ third party music streaming services 
@@ -60,11 +61,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // this callback will not be fired till the user taps on the notification launching the application.
         // TODO: Handle data of notification
         
+        // Let FCM know about the message for analytics 
+        FIRMessaging.messaging().appDidReceiveMessage(userInfo)
+        
         // Print message ID.
         print("Message ID: \(userInfo["gcm.message_id"]!)")
         
         // Print full message.
         print("%@", userInfo)
+        
+        
     }
     // [END receive_message]
     
