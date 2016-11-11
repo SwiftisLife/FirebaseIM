@@ -79,7 +79,7 @@ class CreateANewAccount: UIViewController {
                 let cancelAction = UIAlertAction(
                     title: "Cancel",
                 style: UIAlertActionStyle.Destructive) { (action) in
-                    // ...
+                    // ... 
                 }
                 
                 let confirmAction = UIAlertAction(
