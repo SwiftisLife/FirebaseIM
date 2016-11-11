@@ -12,12 +12,10 @@ import AVFoundation
 
 class LoginViewController: UIViewController {
     
-
     @IBOutlet weak var textFieldLoginEmail: UITextField!
     
     @IBOutlet weak var textFieldLoginPassword: UITextField!
     
-
     var player: AVPlayer?
     
     override func viewDidLoad() {

@@ -8,6 +8,7 @@
 
 import UIKit
 import Firebase
+import FirebaseAuth
 
 class CreateANewAccount: UIViewController {
     
@@ -15,13 +16,15 @@ class CreateANewAccount: UIViewController {
     
     @IBOutlet weak var createNewPassword: UITextField!
     
-    override func viewDidLoad() {
+    let user = FIRAuth.auth()?.currentUser
+        override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(CreateANewAccount.dismissKeyboard))
+               let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(CreateANewAccount.dismissKeyboard))
         view.addGestureRecognizer(tap)
         let swipeRec = UISwipeGestureRecognizer()
-    }
+            
+        }
     
     func dismissKeyboard() {
         //Causes the view (or one of its embedded text fields) to resign the first responder status.
@@ -31,6 +34,15 @@ class CreateANewAccount: UIViewController {
     @IBAction func signUpNewAcct(sender: AnyObject) {
         let email = createNewEmail.text!
         let password = createNewPassword.text!
+        
+        user?.sendEmailVerificationWithCompletion() { error in
+            if error != nil {
+        // An error happened.
+            } else {
+                // Email sent
+            }
+        }
+        
         FIRAuth.auth()?.createUserWithEmail(email, password: password) { (user, error) in
             
             if error != nil {
@@ -61,7 +73,7 @@ class CreateANewAccount: UIViewController {
             } else {
                 let alertController = UIAlertController(
                     title: "Hey user!",
-                    message: "You have signed up!",
+                    message: "You have signed up! A verification e-mail will be sent to the e-mail address you used to create an account.",
                     preferredStyle: UIAlertControllerStyle.Alert)
                 
                 let cancelAction = UIAlertAction(

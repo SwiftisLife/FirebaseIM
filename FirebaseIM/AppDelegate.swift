@@ -20,6 +20,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Continue to play users music from iTunes/Apple Music/ third party music streaming services 
         try! AVAudioSession.sharedInstance().setCategory(AVAudioSessionCategoryAmbient)
+        
         // Register for remote notifications
         if #available(iOS 8.0, *) {
             // [START register_for_notifications]
@@ -98,6 +99,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     // [END connect_to_fcm]
     
     func applicationDidBecomeActive(application: UIApplication) {
+        application.applicationIconBadgeNumber = 0 
         connectToFcm()
     }
     
@@ -108,6 +110,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     func applicationWillEnterForeground(application: UIApplication) {
         NSNotificationCenter.defaultCenter().postNotificationName("continueVideo", object: nil)
+       
     }
     
     func applicationWillTerminate(application: UIApplication) {
