@@ -1,11 +1,3 @@
-//
-//  CreateANewAccount.swift
-//  FirebaseIM
-//
-//  Created by Safina Lifa on 8/29/16.
-//  Copyright © 2016 Safina Lifa. All rights reserved.
-//
-
 import UIKit
 import Firebase
 import FirebaseAuth
@@ -13,9 +5,7 @@ import FirebaseAuth
 class CreateANewAccount: UIViewController {
     
     @IBOutlet weak var createNewEmail: UITextField!
-    
     @IBOutlet weak var createNewPassword: UITextField!
-    
     let user = FIRAuth.auth()?.currentUser
         override func viewDidLoad() {
         super.viewDidLoad()
@@ -79,7 +69,7 @@ class CreateANewAccount: UIViewController {
                 let cancelAction = UIAlertAction(
                     title: "Cancel",
                 style: UIAlertActionStyle.Destructive) { (action) in
-                    // ... 
+                    // ...
                 }
                 
                 let confirmAction = UIAlertAction(
@@ -87,8 +77,6 @@ class CreateANewAccount: UIViewController {
                         (action) in self.performSegueWithIdentifier("Success", sender: self)
                 })
                 // ...
-                
-                
                 alertController.addAction(confirmAction)
                 alertController.addAction(cancelAction)
                 self.presentViewController(alertController, animated: true, completion: nil)

@@ -1,33 +1,19 @@
-//
-//  MessagesViewController.swift
-//  FirebaseIM
-//
-//  Created by Safina Lifa on 8/29/16.
-//  Copyright © 2016 Safina Lifa. All rights reserved.
-//
-
 import UIKit
 import JSQMessagesViewController
 import Firebase 
 
 class MessagesViewController: JSQMessagesViewController {
     
+    @IBOutlet var MessageView: UIView!
     var user: FIRAuth?
     var messages = [JSQMessage]()
-    
-    
     var messageRef: FIRDatabaseReference!
-    
-    let defaults = NSUserDefaults.standardUserDefaults()
-    
+    var ref: FIRDatabaseReference!
     var incomingBubbleImageView: JSQMessagesBubbleImage!
     var outgoingBubbleImageView: JSQMessagesBubbleImage!
     var usersTypingQuery: FIRDatabaseQuery!
-    
-    
-    @IBOutlet var MessageView: UIView!
-    
-    
+    let defaults = NSUserDefaults.standardUserDefaults()
+
     var userIsTypingRef: FIRDatabaseReference!
     private var localTyping = false
     var isTyping: Bool {
@@ -40,17 +26,14 @@ class MessagesViewController: JSQMessagesViewController {
         }
     }
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+    
         self.senderId = UIDevice.currentDevice().identifierForVendor?.UUIDString
         self.senderDisplayName = UIDevice.currentDevice().identifierForVendor?.UUIDString
         self.inputToolbar.contentView.leftBarButtonItem = nil
-        
         collectionView.collectionViewLayout.outgoingAvatarViewSize = CGSizeZero;
         collectionView.collectionViewLayout.incomingAvatarViewSize = CGSizeZero;
-      
         messageRef = FIRDatabase.database().reference()
         observeMessages()
         setupBubbles()
@@ -58,7 +41,9 @@ class MessagesViewController: JSQMessagesViewController {
     
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
+    
         collectionView.collectionViewLayout.springinessEnabled = false
+    
         observeTyping()
     }
     
@@ -75,8 +60,11 @@ class MessagesViewController: JSQMessagesViewController {
         messages.append(message)
      
     }
-    
-    
+
+    @IBAction func removeMessage(sender: AnyObject) {
+        messages.removeAll()
+    }
+
     private func observeMessages() {
         let messagesQuery = messageRef.queryLimitedToLast(25)
         
@@ -104,11 +92,8 @@ class MessagesViewController: JSQMessagesViewController {
         let typingIndicatorRef = FIRDatabase.database().reference().child("typingIndicator")
         userIsTypingRef = typingIndicatorRef.child(senderId)
         userIsTypingRef.onDisconnectRemoveValue()
-        
         usersTypingQuery = typingIndicatorRef.queryOrderedByValue().queryEqualToValue(true)
-        
         usersTypingQuery.observeEventType(.Value) { (data: FIRDataSnapshot!) in
-            
             if data.childrenCount == 1 && self.isTyping {
                 return
             }
@@ -119,7 +104,6 @@ class MessagesViewController: JSQMessagesViewController {
     }
     
     override func didPressSendButton(button: UIButton!, withMessageText text: String!, senderId: String!, senderDisplayName: String!, date: NSDate!) {
-        
         let itemRef = messageRef.childByAutoId()
         let messageItem = [
             "text": text,
@@ -137,21 +121,20 @@ class MessagesViewController: JSQMessagesViewController {
         // Leave blank
         
     }
-    
+
     override func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        
         return messages.count
         
     }
     
     override func collectionView(collectionView: JSQMessagesCollectionView!, messageDataForItemAtIndexPath indexPath: NSIndexPath!) -> JSQMessageData! {
-  
         let data = self.messages[indexPath.row]
         return data
     }
     
     override func collectionView(collectionView: JSQMessagesCollectionView!, didDeleteMessageAtIndexPath indexPath: NSIndexPath!) {
         self.messages.removeAtIndex(indexPath.row)
+        
     }
     
     override func collectionView(collectionView: JSQMessagesCollectionView!, messageBubbleImageDataForItemAtIndexPath indexPath: NSIndexPath!) -> JSQMessageBubbleImageDataSource! {
@@ -178,9 +161,7 @@ class MessagesViewController: JSQMessagesViewController {
         return cell
     }
     
-    
     override func collectionView(collectionView: JSQMessagesCollectionView!, avatarImageDataForItemAtIndexPath indexPath: NSIndexPath) -> JSQMessageAvatarImageDataSource! {
-        
         return nil
     }
     

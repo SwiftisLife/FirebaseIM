@@ -1,11 +1,3 @@
-//
-//  LoginViewController.swift
-//  FirebaseIM
-//
-//  Created by Safina Lifa on 8/29/16.
-//  Copyright © 2016 Safina Lifa. All rights reserved.
-//
-
 import UIKit
 import FirebaseAuth
 import AVFoundation
@@ -13,14 +5,12 @@ import AVFoundation
 class LoginViewController: UIViewController {
     
     @IBOutlet weak var textFieldLoginEmail: UITextField!
-    
     @IBOutlet weak var textFieldLoginPassword: UITextField!
     
     var player: AVPlayer?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-     
         
         UIApplication.sharedApplication().statusBarStyle = .LightContent
         let path = NSBundle.mainBundle().pathForResource("Street-View", ofType: "mp4")
@@ -119,8 +109,8 @@ class LoginViewController: UIViewController {
             } else {
                 print("Successful login!")
                 self.performSegueWithIdentifier("SuccessfulAuthentication", sender: nil)
-            }
-        })
+                }
+            })
+        }
     }
-}
 }

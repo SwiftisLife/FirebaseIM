@@ -1,11 +1,3 @@
-//
-//  AppDelegate.swift
-//  FirebaseIM
-//
-//  Created by Safina Lifa on 8/29/16.
-//  Copyright © 2016 Safina Lifa. All rights reserved.
-//
-
 import UIKit
 import Firebase
 import FirebaseInstanceID

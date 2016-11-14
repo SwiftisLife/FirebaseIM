@@ -1,11 +1,3 @@
-//
-//  ResetPassword.swift
-//  FirebaseIM
-//
-//  Created by Safina Lifa on 8/29/16.
-//  Copyright © 2016 Safina Lifa. All rights reserved.
-//
-
 import UIKit
 import Firebase
 
@@ -15,10 +7,7 @@ class ResetPassword: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         // Do any additional setup after loading the view.
-       
-        
         let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(ResetPassword.dismissKeyboard))
         view.addGestureRecognizer(tap)
         let swipeRec = UISwipeGestureRecognizer()
@@ -84,8 +73,6 @@ class ResetPassword: UIViewController {
                 
                 self.presentViewController(alertController, animated: true, completion: nil)
             }
-            
-            
             
         }
         
